@@ -11,8 +11,8 @@ class producto
         return this.precio * 1.21;
     }
     restaStock(){
-        this.stock = this.stock - 1
-        console.log(`el stock de ${this.nombre} ha sido actualizado`)
+        this.stock = this.stock - 1;
+        console.log(`el stock de ${this.nombre} ha sido actualizado`);
     }
 }
 const fideos = new producto("Fideos", 209,20);
@@ -23,7 +23,7 @@ const cocaCola = new producto("Coca", 210,29);
 const papasFritas = new producto("Papas Fritas", 170,10);
 
 
-let productos=[fideos,leche,yogurt,tapaDeTarta,cocaCola,papasFritas,mani,pan];
+let productos=[fideos,leche,yogurt,tapaDeTarta,cocaCola,papasFritas];
 let carrito=[];
 
 class ObjCarrito{
@@ -42,38 +42,44 @@ let btnOn3=document.getElementById("btnClick3");
 let btnOn4=document.getElementById("btnClick4");
 let btnOn5=document.getElementById("btnClick5");
 let btnOn6=document.getElementById("btnClick6");
-const cards=getQuerySelectorAll(".item");
-const cardsInfo=getQuerySelectorAll(".info-product");
+const cards = document.querySelectorAll(".item");
+const cardsInfo = document.querySelectorAll(".info-product");
 
 btnOn1.onclick = () => 
 {
     agregaCarrito(productos[0]);
     productos[0].restaStock();
+    console.log(carrito);
 };
 btnOn2.onclick = () => 
 {
     agregaCarrito(productos[1]);
     productos[1].restaStock();
+    console.log(carrito);
 };
 btnOn3.onclick = () => 
 {
     agregaCarrito(productos[2]);
     productos[2].restaStock();
+    console.log(carrito);
 };
 btnOn4.onclick = () => 
 {
     agregaCarrito(productos[3]);
     productos[3].restaStock();
+    console.log(carrito);
 };
 btnOn5.onclick = () => 
 {
     agregaCarrito(productos[4]);
     productos[4].restaStock();
+    console.log(carrito);
 };
 btnOn6.onclick = () => 
 {
     agregaCarrito(productos[5]);
     productos[5].restaStock();
+    console.log(carrito);
 };
 //---------------------------------------------------------------------
 function agregaCarrito(prod){
