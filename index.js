@@ -37,11 +37,13 @@ class ObjCarrito{
 }
 
 let btnOn1=document.getElementById("btnClick1");
-let btnOn2=document.getElementById("btnClick1");
-let btnOn3=document.getElementById("btnClick1");
-let btnOn4=document.getElementById("btnClick1");
-let btnOn5=document.getElementById("btnClick1");
-let btnOn6=document.getElementById("btnClick1");
+let btnOn2=document.getElementById("btnClick2");
+let btnOn3=document.getElementById("btnClick3");
+let btnOn4=document.getElementById("btnClick4");
+let btnOn5=document.getElementById("btnClick5");
+let btnOn6=document.getElementById("btnClick6");
+const cards=getQuerySelectorAll(".item");
+const cardsInfo=getQuerySelectorAll(".info-product");
 
 btnOn1.onclick = () => 
 {
@@ -90,3 +92,4 @@ function agregaCarrito(prod){
      console.table(carrito);
  }
 }
+
