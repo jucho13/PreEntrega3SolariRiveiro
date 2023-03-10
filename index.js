@@ -29,7 +29,7 @@ let carrito=[];
 class ObjCarrito{
     constructor(producto, cant){
         this.producto = producto; 
-        this.cantidad = cant
+        this.cantidad = cant;
     }
     sumaStock(){
         this.cantidad = this.cantidad + 1 
@@ -42,6 +42,7 @@ let btnOn3=document.getElementById("btnClick3");
 let btnOn4=document.getElementById("btnClick4");
 let btnOn5=document.getElementById("btnClick5");
 let btnOn6=document.getElementById("btnClick6");
+let btnCarrito=document.getElementById("btnClickCarrito");
 const cards = document.querySelectorAll(".item");
 const cardsInfo = document.querySelectorAll(".info-product");
 
@@ -98,4 +99,22 @@ function agregaCarrito(prod){
      console.table(carrito);
  }
 }
+
+btnCarrito.onclick = () => 
+{
+    let total=0;
+    let nombreProdCarrito;
+    let posicionProd;
+
+    for(i=0;i<carrito.length;i++)
+    {
+        nombreProdCarrito=carrito[i].producto;
+        posicionProd=productos.indexOf(nombreProdCarrito);
+        for(j=0;j<carrito.cant;j++)
+        {
+            total+=productos[posicionProd].sumaIva();
+        }
+    }
+    console.log(total);
+};
 
