@@ -102,17 +102,20 @@ function agregaCarrito(prod){
 
 btnCarrito.onclick = () => 
 {
-    let total=0;
     let nombreProdCarrito;
     let posicionProd;
-
+    let total=0;
     for(i=0;i<carrito.length;i++)
     {
         nombreProdCarrito=carrito[i].producto;
+        console.log(nombreProdCarrito);
         posicionProd=productos.indexOf(nombreProdCarrito);
-        for(j=0;j<carrito.cant;j++)
+        console.log(posicionProd);
+        console.log(carrito[i].cantidad);
+        for(j=0;j<carrito[i].cantidad;j++)
         {
-            total+=productos[posicionProd].sumaIva();
+            total=total + productos[posicionProd].sumaIva();
+            console.log(productos[posicionProd].sumaIva());
         }
     }
     console.log(total);
