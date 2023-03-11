@@ -99,14 +99,25 @@ function agregaCarrito(prod){
      console.table(carrito);
  }
 }
+const bodyContainer=document.getElementById("container-items");
+console.log(bodyContainer);
+function totalFuncion(total,bodyContainer){
+    const parrafo = document.createElement("div");
+    parrafo.innerText = `El total de su compra con IVA es ${total}`;
+    parrafo.className = "total";
+    bodyContainer.appendChild(parrafo);
+}
 
 btnCarrito.onclick = () => 
 {
     let nombreProdCarrito;
     let posicionProd;
+    let subTotal;
     let total=0;
+    let subTotalProducto=[];
     for(i=0;i<carrito.length;i++)
     {
+        subTotal=0;
         nombreProdCarrito=carrito[i].producto;
         console.log(nombreProdCarrito);
         posicionProd=productos.indexOf(nombreProdCarrito);
@@ -117,7 +128,20 @@ btnCarrito.onclick = () =>
             total=total + productos[posicionProd].sumaIva();
             console.log(productos[posicionProd].sumaIva());
         }
-    }
-    console.log(total);
-};
+        subTotalProducto.push(subTotal);
+        
+    };
+bodyContainer.innerHTML=(``);
+// carrito.forEach(producto=>
+//     {
+//         const div = document.createElement("div");
+//         div.innerHTML=`<p> Nombre: ${producto.nombre}</p>
+//                         <p> Cantidad ${carrito.cantidad}
+//                         <p> Precio: ${producto.precio}</p>`;
+//         div.appendChild(bodyContainer);
+        
+//     });
+totalFuncion(total,bodyContainer);
+}
+
 
